@@ -1,0 +1,56 @@
+<img src="https://github.com/cmacphillamy/yet-another-model/blob/main/docs/images/TBG-LogoFull_small.png"
+     style="background: none" width="120px" height="120px" align="right">
+
+[![CI](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml/badge.svg)](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+
+# python-copier-template
+
+The Transformational Bioinformatics Group's [copier](https://copier.readthedocs.io) template for pure Python projects.
+It can be optionally used to:
+
+- Create new projects from
+- Update existing projects in line with it
+- Keep projects in sync with changes to it
+- Provide a source of inspiration to cherry-pick from
+
+Source          | <https://github.com/https://github.com/cmacphillamy/tbioinfo-copier-python>
+:---:           | :---:
+Documentation   | <https://cmacphillamy.github.io/python-copier-template>
+Releases        | <https://github.com/cmacphillamy/tbioinfo-copier-python/releases>
+
+It integrates the following tools:
+
+- [setuptools](https://setuptools.pypa.io) and [setuptools-scm](https://setuptools-scm.readthedocs.io) for packaging
+- [uv](https://docs.astral.sh/uv/) to manage installation and project lockfile
+- [pytest](https://docs.pytest.org) for code testing and coverage
+- [pre-commit](https://pre-commit.com) to run linting and formatting such as [ruff](https://docs.astral.sh/ruff)
+- [pyright](https://microsoft.github.io/pyright) or [mypy](https://www.mypy-lang.org) for static type checking
+- [sphinx](https://www.sphinx-doc.org) for tutorials, how-to guides, explanations and reference documentation
+- [tox](https://tox.wiki) to run the above tasks locally and in CI
+- [GitHub Actions](https://docs.github.com/en/actions) to provide CI and deployment to PyPI and GitHub Pages
+- [VSCode](https://code.visualstudio.com/docs) settings for running the above tools on save
+
+## Example
+
+You can see the template in action in the [example project](https://github.com/cmacphillamy/tbioinfo-copier-python). This is an up to date expansion of the template to illustrate how it looks with all the options enabled.
+
+## Create a new project from the commandline
+
+You will need to `pip install copier` inside an activated `venv` from python3.11 or later, then you can create a new module via:
+
+```
+git init --initial-branch=main /path/to/my-project
+# $_ resolves to /path/to/my-project
+copier copy https://github.com/cmacphillamy/tbioinfo-copier-python.git $_
+```
+
+You can also use it via `uvx copier` if you have `uv` installed.
+
+## Credits
+
+This is heavily inspired by the [Diamond Lightsource Python Template](https://github.com/DiamondLightSource/python-copier-template).
+
+<!-- README only content. Anything below this line won't be included in index.md -->
+
+See https://cmacphillamy.github.io/tbioinfo-copier-python for more detailed documentation.

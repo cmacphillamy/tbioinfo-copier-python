@@ -1,0 +1,12 @@
+author_email: ident@csiro.au
+author_name: Transformational Bioinformatics
+
+description: An expanded https://github.com/cmacphillamy/tbioinfo-copier-python to illustrate how it looks with all the options enabled.
+distribution_name: tbg-python-copier-template-example
+docs_type: sphinx
+git_platform: github.com
+github_org: cmacphillamy
+package_name: python_copier_template_example
+repo_name: python-copier-template-example
+type_checker: pyright
+strict_typing: true
