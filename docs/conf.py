@@ -14,7 +14,7 @@ import requests
 # -- General configuration ------------------------------------------------
 
 # General information about the project.
-project = "python-copier-template"
+project = "tbioinfo-copier-python"
 
 # The full version, including alpha/beta/rc tags.
 release = version(project)
