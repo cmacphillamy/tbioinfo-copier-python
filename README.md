@@ -1,4 +1,4 @@
-<img src="https://github.com/cmacphillamy/yet-another-model/blob/main/docs/images/TBG-LogoFull_small.png"
+<img src="https://github.com/cmacphillamy/tbioinfo-copier-python/blob/main/docs/images/TBG-LogoFull_small.png"
      style="background: none" width="120px" height="120px" align="right">
 
 [![CI](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml/badge.svg)](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml)
