@@ -32,13 +32,13 @@ jobs:
             - name: Install uv
               uses: astral-sh/setup-uv@v7
 
-        #   - name: Run tests
-        #     run: uv run --locked tox -e tests
+            - name: Run tests
+              run: uv run --locked tox -e tests
 
-        #   - name: Upload coverage to Codecov
-        #     uses: codecov/codecov-action@v5
-        #     with:
-        #       name: ${{ inputs.python-version }}/${{ inputs.runs-on }}
-        #       files: cov.xml
-        #     env:
-        #       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+            - name: Upload coverage to Codecov
+              uses: codecov/codecov-action@v5
+              with:
+                  name: ${{ inputs.python-version }}/${{ inputs.runs-on }}
+                  files: cov.xml
+              env:
+                  CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
