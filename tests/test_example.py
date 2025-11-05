@@ -73,7 +73,7 @@ def test_template_with_extra_code_and_api_docs(tmp_path: Path):
     copy_project(tmp_path)
     run = make_venv(tmp_path)
     # add some code
-    init = tmp_path / "src" / "python_copier_template_example" / "__init__.py"
+    init = tmp_path / "src" / "tbg_python_copier_template_example" / "__init__.py"
     init.write_text(
         init.read_text().replace(
             """
@@ -81,7 +81,7 @@ from ._version import __version__
 
 __all__ = [""",
             '''
-from python_copier_template_example import extra_pkg
+from tbg_python_copier_template_example import extra_pkg
 
 from ._version import __version__
 
@@ -93,7 +93,7 @@ class TopCls:
 __all__ = ["TopCls", "extra_pkg", ''',
         )
     )
-    extra_pkg = tmp_path / "src" / "python_copier_template_example" / "extra_pkg"
+    extra_pkg = tmp_path / "src" / "tbg_python_copier_template_example" / "extra_pkg"
     extra_pkg.mkdir()
     (extra_pkg / "__init__.py").write_text('"""Extra Package."""\n')
     code = '''"""A module."""
@@ -109,17 +109,19 @@ class Thing:
     run(".venv/bin/tox -p")
     # Check it generates the right output
     api_dir = tmp_path / "build" / "html" / "_api"
-    top_html = api_dir / "python_copier_template_example.html"
+    top_html = api_dir / "tbg_python_copier_template_example.html"
     assert "extra_pkg" in top_html.read_text()
     assert "Extra Package." in top_html.read_text()
     assert "TopCls" in top_html.read_text()
     assert "A top level class." in top_html.read_text()
     assert "__version__" in top_html.read_text()
     assert "setuptools_scm" in top_html.read_text()
-    package_html = api_dir / "python_copier_template_example.extra_pkg.html"
+    package_html = api_dir / "tbg_python_copier_template_example.extra_pkg.html"
     assert "extra_module" in package_html.read_text()
     assert "A module." in package_html.read_text()
-    module_html = api_dir / "python_copier_template_example.extra_pkg.extra_module.html"
+    module_html = (
+        api_dir / "tbg_python_copier_template_example.extra_pkg.extra_module.html"
+    )
     assert "Thing" in module_html.read_text()
     assert "A docstring." in module_html.read_text()
 
@@ -162,7 +164,7 @@ def test_dots_in_package_name(tmp_path: Path):
 def test_example_repo_updates(tmp_path: Path):
     generated_path = tmp_path / "generated"
     example_url = (
-        "https://github.com/DiamondLightSource/python-copier-template-example.git"
+        "https://github.com/cmacphillamy/tbg-python-copier-template-example.git"
     )
     example_path = tmp_path / "example"
     copy_project(generated_path)
@@ -224,7 +226,9 @@ print(obj._bar)
     run("ruff check")
 
     # Private member access should not be allowed in src
-    src_file = tmp_path / "src" / "python_copier_template_example" / "private_access.py"
+    src_file = (
+        tmp_path / "src" / "tbg_python_copier_template_example" / "private_access.py"
+    )
     with src_file.open("w") as stream:
         stream.write(code)
     with pytest.raises(AssertionError, match="SLF001 Private member accessed: `_bar`"):
@@ -239,7 +243,9 @@ myVariable = "foo"
     copy_project(tmp_path)
     run = make_venv(tmp_path)
 
-    src_file = tmp_path / "src" / "python_copier_template_example" / "bad_example.py"
+    src_file = (
+        tmp_path / "src" / "tbg_python_copier_template_example" / "bad_example.py"
+    )
     with src_file.open("w") as stream:
         stream.write(code)
     with pytest.raises(AssertionError, match=r"N816 .*"):
@@ -267,7 +273,7 @@ def test_pyright_works_with_external_deps(tmp_path: Path):
     )
     pyproject_toml.write_text(text)
     # And some code that uses it
-    src_file = tmp_path / "src" / "python_copier_template_example" / "example.py"
+    src_file = tmp_path / "src" / "tbg_python_copier_template_example" / "example.py"
     src_file.write_text("""
 import numpy as np
 
