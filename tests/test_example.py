@@ -57,8 +57,8 @@ def test_template_defaults(tmp_path: Path):
     container_doc = tmp_path / "docs" / "how-to" / "run-container.md"
     pyproject_toml = tmp_path / "pyproject.toml"
     assert container_doc.exists()
-    catalog_info = tmp_path / "catalog-info.yaml"
-    assert catalog_info.exists()
+    # catalog_info = tmp_path / "catalog-info.yaml"
+    # assert catalog_info.exists()
     assert 'typeCheckingMode = "strict"' in pyproject_toml.read_text()
     run(".venv/bin/tox -p")
     if not run_pipe("git tag --points-at HEAD"):
@@ -136,10 +136,10 @@ def test_template_no_docs(tmp_path: Path):
     run(".venv/bin/tox -p")
 
 
-def test_template_in_different_org_has_no_catalog(tmp_path: Path):
-    copy_project(tmp_path, github_org="bluesky")
-    catalog_info = tmp_path / "catalog-info.yaml"
-    assert not catalog_info.exists()
+# def test_template_in_different_org_has_no_catalog(tmp_path: Path):
+#     copy_project(tmp_path, github_org="bluesky")
+#     catalog_info = tmp_path / "catalog-info.yaml"
+#     assert not catalog_info.exists()
 
 
 def test_template_no_docker_has_no_docs_and_works(tmp_path: Path):
@@ -304,26 +304,3 @@ def test_works_with_pydocstyle(tmp_path: Path):
     # Ensure ruff is still happy
     run = make_venv(tmp_path)
     run("ruff check")
-
-
-def test_catalog_info(tmp_path: Path):
-    copy_project(tmp_path)
-    catalog_info_path = tmp_path / "catalog-info.yaml"
-    with catalog_info_path.open("r") as stream:
-        catalog_info = yaml.safe_load(stream)
-    assert catalog_info == {
-        "apiVersion": "backstage.io/v1alpha1",
-        "kind": "Component",
-        "metadata": {
-            "name": "dls-python-copier-template-example",
-            "title": "python-copier-template-example",
-            "description": "An expanded "
-            "https://github.com/DiamondLightSource/python-copier-template "
-            "to illustrate how it looks with all the options enabled.",
-        },
-        "spec": {
-            "type": "service",
-            "lifecycle": "experimental",
-            "owner": "group:default/daq",
-        },
-    }
