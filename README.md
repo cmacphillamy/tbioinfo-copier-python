@@ -1,5 +1,5 @@
 <img src="https://github.com/cmacphillamy/tbioinfo-copier-python/blob/main/docs/images/TBG-LogoFull_small.png"
-     style="background: none" width="120px" height="120px" align="right">
+     style="background: none" width="200px" height="200px" align="right">
 
 [![CI](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml/badge.svg)](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
