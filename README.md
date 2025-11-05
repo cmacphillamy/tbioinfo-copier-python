@@ -16,7 +16,7 @@ It can be optionally used to:
 
 Source          | <https://github.com/https://github.com/cmacphillamy/tbioinfo-copier-python>
 :---:           | :---:
-Documentation   | <https://cmacphillamy.github.io/python-copier-template>
+Documentation   | <https://cmacphillamy.github.io/tbioinfo-copier-python>
 Releases        | <https://github.com/cmacphillamy/tbioinfo-copier-python/releases>
 
 It integrates the following tools:
