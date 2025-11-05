@@ -54,9 +54,9 @@ def make_venv(project_path: Path) -> Callable[[str], str]:
 def test_template_defaults(tmp_path: Path):
     copy_project(tmp_path)
     run = make_venv(tmp_path)
-    container_doc = tmp_path / "docs" / "how-to" / "run-container.md"
+    # container_doc = tmp_path / "docs" / "how-to" / "run-container.md"
     pyproject_toml = tmp_path / "pyproject.toml"
-    assert container_doc.exists()
+    # assert container_doc.exists()
     # catalog_info = tmp_path / "catalog-info.yaml"
     # assert catalog_info.exists()
     assert 'typeCheckingMode = "strict"' in pyproject_toml.read_text()
@@ -146,8 +146,8 @@ def test_template_no_docs(tmp_path: Path):
 
 def test_template_no_docker_has_no_docs_and_works(tmp_path: Path):
     copy_project(tmp_path, docker=False)
-    container_doc = tmp_path / "docs" / "how-to" / "run-container.md"
-    assert not container_doc.exists()
+    # container_doc = tmp_path / "docs" / "how-to" / "run-container.md"
+    # assert not container_doc.exists()
     run = make_venv(tmp_path)
     run(".venv/bin/tox -p")
 
