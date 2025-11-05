@@ -1,6 +1,5 @@
 [![CI]({{repo_url}}/actions/workflows/ci.yml/badge.svg)]({{repo_url}}/actions/workflows/ci.yml)
 [![Coverage](https://codecov.io/gh/{{github_org}}/{{repo_name}}/branch/main/graph/badge.svg)](https://codecov.io/gh/{{github_org}}/{{repo_name}})
-{% if pypi %}[![PyPI](https://img.shields.io/pypi/v/{{distribution_name}}.svg)](https://pypi.org/project/{{distribution_name}}){% endif %}
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
 # {{ package_name }}
@@ -12,10 +11,9 @@ how it does it, and why people should use it.
 
 {% if True              %}Source          | <{{repo_url}}>
 {% endif %}{% if True   %}:---:           | :---:
-{% endif %}{% if pypi   %}PyPI            | `pip install {{distribution_name}}`
-{% endif %}{% if docker %}Docker          | `docker run ghcr.io/{{github_org | lower}}/{{repo_name}}:latest`
 {% endif %}{% if sphinx %}Documentation   | <{{docs_url}}>
 {% endif                %}Releases        | <{{repo_url}}/releases>
+About Us | <https://bioinformatics.csiro.au/>
 
 This is where you should put some images or code snippets that illustrate
 some relevant examples. If it is a library then you might put some
