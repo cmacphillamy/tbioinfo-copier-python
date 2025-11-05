@@ -20,7 +20,7 @@ jobs:
             - name: Regenerate example
               run: |
                   git init /tmp/example
-                  uvx copier copy --data-file example-answers.yml --vcs-ref=HEAD . /tmp/example
+                  uvx copier copy --defaults --data-file example-answers.yml --vcs-ref=HEAD . /tmp/example
                   sed -i 's|_src_path: .|_src_path: https://github.com/cmacphillamy/tbioinfo-copier-python.git|' /tmp/example/.copier-answers.yml
                   uv lock --directory /tmp/example
                   rm -rf /tmp/example/.git
