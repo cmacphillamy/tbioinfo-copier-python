@@ -1,41 +1,41 @@
 name: CI
 
 on:
-  push:
-    branches:
-      - main
-    tags:
-      - '*'
-  pull_request:
+    push:
+        branches:
+            - main
+        tags:
+            - "*"
+    pull_request:
 
 jobs:
-  lint:
-    uses: ./.github/workflows/_tox.yml
-    with:
-      tox: pre-commit
+    lint:
+        uses: ./.github/workflows/_tox.yml
+        with:
+            tox: pre-commit
 
-  test:
-    uses: ./.github/workflows/_test.yml
-    with:
-      runs-on: ubuntu-latest
-    secrets:
-      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    test:
+        uses: ./.github/workflows/_test.yml
+        with:
+            runs-on: ubuntu-latest
+        secrets:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
-  docs:
-    uses: ./.github/workflows/_docs.yml
-    permissions:
-      contents: write
+    docs:
+        uses: ./.github/workflows/_docs.yml
+        permissions:
+            contents: write
 
-  example:
-    needs: test
-    if: github.ref_name == 'main'
-    uses: ./.github/workflows/_example.yml
-    secrets:
-      EXAMPLE_DEPLOY_KEY: ${{ secrets.EXAMPLE_DEPLOY_KEY }}
+    #   example:
+    #     needs: test
+    #     if: github.ref_name == 'main'
+    #     uses: ./.github/workflows/_example.yml
+    #     secrets:
+    #       EXAMPLE_DEPLOY_KEY: ${{ secrets.EXAMPLE_DEPLOY_KEY }}
 
-  release:
-    needs: [test, docs]
-    if: github.ref_type == 'tag'
-    uses: ./.github/workflows/_release.yml
-    permissions:
-      contents: write
+    release:
+        needs: [test, docs]
+        if: github.ref_type == 'tag'
+        uses: ./.github/workflows/_release.yml
+        permissions:
+            contents: write
