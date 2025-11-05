@@ -13,12 +13,14 @@ dev = [
     "myst-parser",
     "pre-commit",
     "pydata-sphinx-theme>=0.12",
+    "sphinx_rtd_theme>=3.0.0",
     "pytest",
     "ruff",
     "sphinx-autobuild",
     "sphinx-copybutton",
     "sphinx-design",
     "tox-uv",
+    "uv"
 ]
 
 [tool.setuptools_scm]
