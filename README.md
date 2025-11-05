@@ -4,6 +4,7 @@
 [![CI](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml/badge.svg)](https://github.com/cmacphillamy/tbioinfo-copier-python/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 
+
 # python-copier-template
 
 The Transformational Bioinformatics Group's [copier](https://copier.readthedocs.io) template for pure Python projects.
@@ -14,7 +15,7 @@ It can be optionally used to:
 - Keep projects in sync with changes to it
 - Provide a source of inspiration to cherry-pick from
 
-Source          | <https://github.com/https://github.com/cmacphillamy/tbioinfo-copier-python>
+Source          | <https://github.com/cmacphillamy/tbioinfo-copier-python>
 :---:           | :---:
 Documentation   | <https://cmacphillamy.github.io/tbioinfo-copier-python>
 Releases        | <https://github.com/cmacphillamy/tbioinfo-copier-python/releases>
