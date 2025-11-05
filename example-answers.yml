@@ -7,7 +7,7 @@ docs_type: sphinx
 git_platform: github.com
 github_user: cmacphillamy
 github_org: cmacphillamy
-package_name: python_copier_template_example
+package_name: tbg_python_copier_template_example
 repo_name: tbg-python-copier-template-example
 type_checker: pyright
 strict_typing: true
