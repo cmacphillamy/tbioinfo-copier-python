@@ -6,19 +6,13 @@ The template has the following folders at the root level.
 
 This folder contains the source code for the project. Typically this contains a single folder with the package name for the project and the folder contains python modules files.
 
-See [](src) for details.
-
 ## tests
 
 This folder holds all of the tests that will be run by pytest, both locally and in CI.
 
-See [](using-pytest)
-
 ## docs
 
 This folder contains the source for sphinx documentation.
-
-See [](documentation-structure) for details.
 
 ## .github
 
