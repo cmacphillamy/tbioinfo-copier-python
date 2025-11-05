@@ -111,4 +111,4 @@ sphinx:
     default: "{{ docs_type == 'sphinx' }}"
     when: false
 
-_subdirectory: "template"
+# _subdirectory: "template"
