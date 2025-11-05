@@ -39,8 +39,6 @@ extensions = [
     "sphinx_design",
     # So we can write markdown files
     "myst_parser",
-    # Use readthedocs theme
-    "sphinx_rtd_theme",
 ]
 
 # So we can use the ::: syntax
@@ -104,7 +102,7 @@ copybutton_prompt_is_regexp = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = "sphinx_rtd_theme"
+html_theme = "pydata_sphinx_theme"
 github_repo = project
 github_user = "cmacphillamy"
 switcher_json = f"https://{github_user}.github.io/{github_repo}/switcher.json"
