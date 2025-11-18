@@ -6,8 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
 
     steps:
       - name: Avoid git conflicts when tag and branch pushed at same time
